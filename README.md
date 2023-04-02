@@ -5,6 +5,7 @@ Imersão Alura - Java - 2023
    Exércícios práticos do Imersão Java, da Alura, 2023.
 ## Funcionalidades;
    Em construção
+   > :construction: Projeto em construção :construction:
 ## Como os usuários podem utilizá-lo;
    Apenas para algum aprendizado. 
 ## Onde os usuários podem encontrar ajuda sobre seu projeto;
