@@ -10,15 +10,15 @@ import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
 
-    public void cria() throws Exception{
+    public void cria(InputStream inputStream, String nomeArquivoSaida) throws Exception{
 
         //LEITURA DA IMAGEM
 
         // BufferedImage imagemOriginal = ImageIO.read(new File("entrada/filme.jpg"));
         // MELHORANDO COM INPUTSTREAM
-        InputStream inputStream = new URL(
-            "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_1.jpg"
-        ).openStream();
+        // InputStream inputStream = new URL(
+        //     "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_1.jpg"
+        // ).openStream();
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         //CRIAR NOVA IMAGEM TRANSPARENTE E NO TAMANHO
@@ -41,12 +41,12 @@ public class GeradoraDeFigurinhas {
         graphics.drawString("TOPZERA", 100, novaAltura - 100);
         // COPIAR A IMAGEM ORIGINAL PARA A NOVA IMAGEM (EM MEMÓRIA
 
-        ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
+        ImageIO.write(novaImagem, "png", new File(nomeArquivoSaida));
 
         
     }
-    public static void main(String[] args) throws Exception {
-        GeradoraDeFigurinhas GDF = new GeradoraDeFigurinhas();
-        GDF.cria();
-    }
+    // public static void main(String[] args) throws Exception {
+    //     GeradoraDeFigurinhas GDF = new GeradoraDeFigurinhas();
+    //     GDF.cria();
+    // }
 }

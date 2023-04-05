@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -33,11 +35,23 @@ public class App {
         // System.out.println("Veja a lista de filmes: >>>> ");
         System.out.println("tamanho da lista: "+listaDeFilmes.size());
 
+        
+        
         // PASSO 03) MANIPULAR DADOS
         
         for (Map<String,String> filme : listaDeFilmes) {
             System.out.println(filme.get("title") + "\t" + filme.get("imDbRating")+ "\t" + filme.get("image"));
+
+
             
+            String URLImagem = filme.get("image");    
+            String titulo = filme.get("title");
+            String nomeArquivoSaida = titulo + ".png";
+
+            InputStream inputStream = new URL(URLImagem).openStream();
+
+            GeradoraDeFigurinhas GDF = new GeradoraDeFigurinhas();
+            GDF.cria(inputStream, nomeArquivoSaida);
         }
     }
 }
